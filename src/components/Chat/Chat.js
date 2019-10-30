@@ -17,7 +17,8 @@ const Chat = ({ location }) => {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const ENDPOINT = "https://space-chat-app-demo.herokuapp.com/";
+  // const ENDPOINT = "localhost:5000";
+  const ENDPOINT = "https://space-chat-app-demo.herokuapp.com/"; //for deployment switch this with localhost: 5000
 
   useEffect(() => {
     const { name, room } = queryString.parse(location.search);
@@ -60,16 +61,26 @@ const Chat = ({ location }) => {
 
   return (
     <div className="outerContainer">
-      <div className="container">
-        <InfoBar room={room} />
-        <Messages messages={messages} name={name} />
-        <Input
-          message={message}
-          setMessage={setMessage}
-          sendMessage={sendMessage}
-        />
+      <div className="stars">
+        <div className="star star1"></div>
+        <div className="star star2"></div>
+        <div className="star star3"></div>
+        <div className="star star4"></div>
+        <div className="star star5"></div>
+        <div className="star star6"></div>
+        <div className="star star7"></div>
+        <div className="star star8"></div>
+        <div className="container">
+          <InfoBar room={`Room: ${room}`} />
+          <Messages messages={messages} name={name} />
+          <Input
+            message={message}
+            setMessage={setMessage}
+            sendMessage={sendMessage}
+          />
+        </div>
+        <TextContainer users={users} />
       </div>
-      <TextContainer users={users} />
     </div>
   );
 };

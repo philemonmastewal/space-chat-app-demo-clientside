@@ -1,6 +1,6 @@
 .form {
   display: flex;
-  border-top: 2px solid #D3D3D3;
+  border-top: 2px solid #d3d3d3;
 }
 
 .input {
@@ -11,7 +11,9 @@
   font-size: 1.2em;
 }
 
-input:focus, textarea:focus, select:focus{
+input:focus,
+textarea:focus,
+select:focus {
   outline: none;
 }
 
@@ -19,9 +21,18 @@ input:focus, textarea:focus, select:focus{
   color: #fff !important;
   text-transform: uppercase;
   text-decoration: none;
-  background: #2979FF;
+  background: #6a00ff;
   padding: 20px;
   display: inline-block;
   border: none;
   width: 20%;
+  font-size: 18px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+.sendButton:hover {
+  transform: scale(1.05) perspective(1px);
 }
